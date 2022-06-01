@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBTypography } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
-import { getTours, setCurrentPage } from "../redux/features/tourSlice";
+import { getTours } from "../redux/actions/tourActions";
+import {  setCurrentPage} from "../redux/features/tourSlice"
 import CardTour from "../components/CardTour";
 import Spinner from "../components/Spinner";
 import Pagination from "../components/Pagination";
 import { useLocation } from "react-router-dom";
+import NewFeed from "../components/NewFeed";
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -46,13 +48,25 @@ const Home = () => {
           </MDBTypography>
         )}
 
-       
-          <MDBContainer>
-            <MDBRow className="g-2">
-              {tours &&
-                tours.map((item) => <CardTour key={item._id} {...item} />)}
-            </MDBRow>
-          </MDBContainer>
+
+        <MDBRow className="g-2">
+
+          <MDBCol size="12" lg="10" xl="8">
+            {tours &&
+              tours.map((item) => <CardTour key={item._id} {...item} />)}
+          </MDBCol>
+          <MDBCol size="12" lg="2" xl="4" >
+            <h3 className="me-auto">
+              News Feed
+            </h3>
+            <div className="mt-2">
+              <NewFeed/>
+            </div>
+              
+          </MDBCol>
+
+        </MDBRow>
+
 
       </MDBRow>
       {tours.length > 0 && !searchQuery && (

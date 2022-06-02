@@ -13,9 +13,10 @@ import {
 } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteTour, getToursByUser } from "../redux/features/tourSlice";
+
 import Spinner from "../components/Spinner";
 import { toast } from "react-toastify";
+import { deleteTour, getToursByUser } from "../redux/actions/tourActions";
 
 const Dashboard = () => {
   const { user } = useSelector((state) => ({ ...state.auth }));

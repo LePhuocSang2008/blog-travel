@@ -12,9 +12,10 @@ import {
 } from "mdb-react-ui-kit";
 import { useSelector, useDispatch } from "react-redux";
 import { setLogout } from "../redux/features/authSlice";
-import { searchTours } from "../redux/features/tourSlice";
+
 import { useNavigate } from "react-router-dom";
 import decode from "jwt-decode";
+import { searchTours } from "../redux/actions/tourActions";
 
 const Header = () => {
   const [show, setShow] = useState(false);

@@ -13,8 +13,9 @@ import {
 import { useParams, useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { useDispatch, useSelector } from "react-redux";
-import { getToursByTag } from "../redux/features/tourSlice";
+
 import { excerpt } from "../utility";
+import { getToursByTag } from "../redux/actions/tourActions";
 
 const TagTours = () => {
   const { tagTours, loading } = useSelector((state) => ({ ...state.tour }));

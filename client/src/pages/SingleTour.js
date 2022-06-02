@@ -11,9 +11,10 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
 import moment from "moment";
-import { getRelatedTours, getTour } from "../redux/features/tourSlice";
+
 import RelatedTours from "../components/RelatedTours";
 import DisqusThread from "../components/DisqusThread";
+import { getRelatedTours, getTour } from "../redux/actions/tourActions";
 
 const SingleTour = () => {
   const dispatch = useDispatch();

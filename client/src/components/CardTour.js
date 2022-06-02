@@ -13,7 +13,8 @@ import {
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { likeTour } from "../redux/features/tourSlice";
+import { likeTour } from "../redux/actions/tourActions";
+
 
 const CardTour = ({
   imageFile,
@@ -72,7 +73,7 @@ const CardTour = ({
   };
 
   return (
-    <MDBCol size="12" sm="6" md="6" lg="4" xl="3">
+    <MDBCol size="12" sm="6" md="6" xl="4">
       <MDBCard className="h-100 mt-2 d-sm-flex p-2" >
         <MDBCardImage
           src={imageFile}

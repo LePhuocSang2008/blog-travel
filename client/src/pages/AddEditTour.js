@@ -11,7 +11,8 @@ import FileBase from "react-file-base64";
 import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { createTour, updateTour } from "../redux/features/tourSlice";
+import { createTour, updateTour } from "../redux/actions/tourActions";
+
 
 const initialState = {
   title: "",

@@ -12,8 +12,7 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { googleSignIn, login } from "../redux/features/authSlice";
-import { GoogleLogin } from "react-google-login";
+import { login } from "../redux/actions/authActions";
 
 const initialState = {
   email: "",
@@ -42,10 +41,7 @@ const Login = () => {
     setFormValue({ ...formValue, [name]: value });
   };
 
-
   const devEnv = process.env.NODE_ENV !== "production";
-
-  
 
   return (
     <div
@@ -100,7 +96,6 @@ const Login = () => {
               </MDBBtn>
             </div>
           </MDBValidation>
-         
         </MDBCardBody>
         <MDBCardFooter>
           <Link to="/register">

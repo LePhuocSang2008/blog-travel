@@ -46,8 +46,8 @@ const Home = () => {
             We couldn't find any matches for "{searchQuery}"
           </MDBTypography>
         )}
-
-        <MDBRow className="g-2">
+   {tours.length > 0 && location.pathname === "/" && (
+              <MDBRow className="g-2">
           <MDBCol size="12" lg="10" xl="8">
             <MDBRow>
               {tours &&
@@ -67,6 +67,20 @@ const Home = () => {
             </div>
           </MDBCol>
         </MDBRow>
+            )}
+            
+        {tours.length > 0 && location.pathname !== "/" && (
+             <MDBRow className="g-2">
+             <MDBCol size="12">
+               <MDBRow>
+                 {tours &&
+                   tours.map((item) => <CardTour key={item._id} {...item} />)}
+               </MDBRow>
+             </MDBCol>
+           
+           </MDBRow>
+        )}
+       
       </MDBRow>
       {tours.length > 0 && !searchQuery && (
         <Pagination
